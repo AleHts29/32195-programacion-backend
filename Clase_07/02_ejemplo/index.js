@@ -36,7 +36,25 @@ app.post('/api/palabras', (req, res) => {
     res.send({ status: 'Palabra agregada de forma exitosa!!' })
 })
 
+// PUT
+app.put('/api/palabras/:pos', (req, res) => {
+    const { palabra } = req.body
+    const { pos } = req.params
 
+    const palabraAnterior = palabras[parseInt(pos) - 1]
+    palabras[parseInt(pos) - 1] = palabra
+
+    res.send({ actualida: palabra, anterior: palabraAnterior })
+})
+
+// DELETE
+app.delete('/api/palabras/:pos', (req, res) => {
+    const { pos } = req.params
+    const palabra = palabras.splice(parseInt(pos) - 1, 1)
+
+    res.send({ palabra: palabra })
+}
+)
 
 
 
