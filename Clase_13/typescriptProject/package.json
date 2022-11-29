@@ -1,20 +1,17 @@
 {
-  "name": "app-chat",
+  "name": "typescriptproject",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node ./dis/index.js",
+    "build": "./node_modules/.bin/tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2",
-    "socket.io": "^4.5.4"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.20"
+    "typescript": "^4.9.3"
   }
 }

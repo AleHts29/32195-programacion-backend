@@ -1,0 +1,6 @@
+// Aqui va el fichero de configuracion 
+{
+    "presets": [
+        "@babel/preset-env"
+    ]
+}
