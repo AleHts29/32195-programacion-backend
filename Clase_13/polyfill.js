@@ -12,7 +12,6 @@ Array.prototype.customMap = function (callback) {
         const transFormedElement = callback(el, index)
         result.push(transFormedElement)
     }
-
     return result
 };
 
