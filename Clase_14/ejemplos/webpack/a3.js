@@ -5,3 +5,5 @@ function multiplicacion(n1, n2) {
     return n1 * n2
 }
 console.log(multiplicacion(variable1, variable2));
+
+const db = []
