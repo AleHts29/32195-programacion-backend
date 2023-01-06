@@ -1,7 +1,7 @@
 let productosDao
 let carritosDao
 
-switch ('mongodb') {
+switch ('mongo') {
     case 'json':
         const { default: ProductosDaoArchivo } = await import('./productos/ProductosDaoArchivo.js')
         const { default: CarritosDaoArchivo } = await import('./carritos/CarritosDaoArchivo.js')
@@ -13,6 +13,11 @@ switch ('mongodb') {
 
         break
     case 'mongodb':
+        const { default: ProductosDaoMongoDb } = await import('./productos/ProductosDaoMongoDb.js')
+        const { default: CarritosDaoMongoDb } = await import('./carritos/CarritosDaoMongoDb.js')
+
+        productosDao = new ProductosDaoMongoDb()
+        carritosDao = new CarritosDaoMongoDb()
 
         break
     case 'mariadb':

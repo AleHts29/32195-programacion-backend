@@ -14,27 +14,27 @@ class ContenedorFirebase {
     }
 
     async listar(id) {
-        
+
     }
 
     async listarAll() {
-        
+
     }
 
     async guardar(nuevoElem) {
-        
+
     }
 
     async actualizar(nuevoElem) {
-        
+
     }
 
     async borrar(id) {
-        
+
     }
 
     async borrarAll() {
-        
+
     }
 
     async desconectar() {
