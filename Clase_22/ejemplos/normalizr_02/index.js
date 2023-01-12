@@ -145,13 +145,4 @@ console.log('Longitud objeto normalizado: ', JSON.stringify(normalizeData).lengt
 
 // Des normalizacion
 const denormalizeData = denormalize(normalizeData.result, posts, normalizeData.entities);
-print(denormalizeData)
-
-
-
-
-liquidaciones @coderhouse.com
-https://view.genial.ly/636be0469534e2001114e48b
-
-// Manual coder ask
-https://view.genial.ly/636be0469534e2001114e48b
+print(denormalizeData);
