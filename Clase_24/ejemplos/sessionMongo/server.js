@@ -17,7 +17,12 @@ const advancedOptions = {
 app.use(session({
     store: MongoStore.create({
         // local
-        mongoUrl: "mongodb://localhost/sesiones"
+        // mongoUrl: "mongodb://localhost/sesiones"
+
+        // Mongo cloud
+        mongoUrl: 'mongodb+srv://clase20_32195:clase20_32195@cluster0.rafymlp.mongodb.net/sesiones?retryWrites=true&w=majority',
+        mongoOptions: advancedOptions
+
     }),
     secret: 'secret',
     resave: false,
@@ -42,5 +47,5 @@ app.get('/con-session', (req, res) => {
     }
 })
 
-app.listen(8080)
+app.listen(8082)
 console.log('Server on!');
