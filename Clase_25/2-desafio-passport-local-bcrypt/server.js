@@ -3,6 +3,7 @@ import express from "express";
 import session from "express-session";
 import exphbs from 'express-handlebars';
 import path from 'path';
+import bcrypt from 'bcrypt'
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -31,6 +32,11 @@ passport.use(new LocalStrategy(
         if (!existeUsuario) {
             return done(null, false);
         } else {
+            const match = await verifyPass(existeUsuario, password)
+
+            if (!match) {
+                return done(null, false)
+            }
             return done(null, existeUsuario);
         }
     }
@@ -57,6 +63,20 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Metodos de Auth con Bcrypt
+async function generateHashPassword(password) {
+    const hashPassword = await bcrypt.hash(password, 10)
+    return hashPassword
+}
+
+async function verifyPass(usuario, password) {
+    const match = await bcrypt.compare(password, usuario.password)
+    console.log(`pass login: ${password} || pass hash: ${usuario.password}`)
+    return match
+}
+
+
 
 /*----------- Motor de plantillas -----------*/
 app.set('views', 'src/views');
@@ -95,10 +115,10 @@ app.get('/register', (req, res) => {
     res.render('registro.hbs');
 })
 
-// borramos
+
 app.post('/login', passport.authenticate('local', { successRedirect: '/datos', failureRedirect: '/login-error' }));
 
-// borramos
+
 app.get('/datos', isAuth, (req, res) => {
     if (!req.user.contador) {
         req.user.contador = 1
@@ -112,20 +132,22 @@ app.get('/datos', isAuth, (req, res) => {
     res.render('datos', { contador: req.user.contador, datos: datosUsuario });
 })
 
-// borramos
-app.post('/register', (req, res) => {
+
+app.post('/register', async (req, res) => {
     const { nombre, password, direccion } = req.body;
 
     const newUsuario = usuariosDB.find(usuario => usuario.nombre == nombre);
     if (newUsuario) {
         res.render('register-error')
     } else {
-        usuariosDB.push({ nombre, password: password, direccion });
+        const newUser = { nombre, password: await generateHashPassword(password), direccion }
+
+        usuariosDB.push(newUser);
         res.redirect('/login')
     }
 })
 
-// borramos
+
 app.get('/logout', (req, res) => {
     req.logOut(err => {
         res.redirect('/');
