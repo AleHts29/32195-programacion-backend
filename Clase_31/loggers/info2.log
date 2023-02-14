@@ -1,0 +1,6 @@
+[2023-02-14T11:33:05.463] [ERROR] all - Logger error
+[2023-02-14T11:33:05.466] [FATAL] all - Logger fatal
+[2023-02-14T11:36:05.663] [INFO] archivo2 - Logger info
+[2023-02-14T11:36:05.664] [WARN] archivo2 - Logger warn
+[2023-02-14T11:36:05.664] [ERROR] archivo2 - Logger error
+[2023-02-14T11:36:05.664] [FATAL] archivo2 - Logger fatal
