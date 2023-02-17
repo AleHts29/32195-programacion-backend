@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+    <%- include('../partials/head-extras.ejs') %>
+    <title>Productos</title>
+</head>
+
+<body>
+    <%- include('../partials/info.ejs', { specs })%>
+    <div class="container mt-3">
+        <div class="jumbotron">
+            <div id="productos"></div>
+        </div>
+    </div>
+
+    <script>
+
+        function fetchProductosMock() {
+            return fetch('/api/productos-test')
+                .then(respuesta => respuesta.json())
+        }
+
+        function makeHtmlTable(productos) {
+            return fetch('static/plantillas/tabla-productos.hbs')
+                .then(respuesta => respuesta.text())
+                .then(plantilla => {
+                    const template = Handlebars.compile(plantilla);
+                    const html = template({ productos })
+                    return html
+                })
+        }
+
+        fetchProductosMock()
+            .then(productos => {
+                return makeHtmlTable(productos)
+            })
+            .then(html => {
+                document.getElementById('productos').innerHTML = html
+            })
+    </script>
+
+</body>
+
+</html>

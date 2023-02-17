@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+    <title>Formulario de Ingreso de Productos</title>
+</head>
+
+<body>
+    <%- include('../partials/info.ejs', { specs })%>
+    <div class="container mt-3">
+        <div class="jumbotron">
+            <h1>Login de Usuario</h1>
+            <br>
+            <form class="form" action="/login" method="post" role="form">
+
+                <div class="form-group">
+                    <input id="nombre" name='username' value="x" class="form-control" type="hidden">
+                </div>
+
+                <div class="form-group">
+                    <input id="password" name='password' value="x" class="form-control" type="hidden">
+                </div>
+
+                <div class="form-group">
+                    <input class="btn btn-success my-3" type="submit" value="Login">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

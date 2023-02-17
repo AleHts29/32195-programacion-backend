@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+    <title>Formulario de Ingreso</title>
+</head>
+
+<body>
+    <%- include('../partials/info.ejs', { specs })%>
+    <div class="container mt-3">
+        <div class="jumbotron">
+            <h1>Login de Usuario</h1>
+            <br>
+            <div class="form-group">
+                <input class="btn btn-primary my-3" type="submit" value="Login con Facebook"
+                    onclick="location.href = '/auth/facebook'">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

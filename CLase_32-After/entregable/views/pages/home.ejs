@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+    <%- include('../partials/head-extras.ejs') %>
+    <title>Formulario de Ingreso de Productos</title>
+</head>
+
+<body>
+    <%- include('../partials/info.ejs', { specs })%>
+    <div class="alert alert-success p-4">
+        <div class="w-50 float-left">
+            <h2>Bienvenido <%=nombre%></h2>
+        </div>
+        <div class="float-right">
+            <button class="btn btn-warning" onclick="location.href='/logout'">
+                <b>Desloguear</b><br><img src="<%=foto%>" width="75" alt="">
+            </button>
+        </div>
+        <b><a href="#"><%=email%></a></b>
+    </div>
+
+    <div class="container mt-3">
+        <div class="jumbotron">
+            <h1>Ingrese Producto</h1>
+            <br>
+
+            <form id="formAgregarProducto">
+                <!-- Campo nombre del producto -->
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" class="form-control" type="text" name="title" required>
+                </div>
+
+                <!-- Campo precio del producto -->
+                <div class="form-group">
+                    <label for="precio">Precio</label>
+                    <input id="precio" class="form-control" type="number" step="0.01" name="price" required>
+                </div>
+
+                <!-- Campo url de la foto del producto -->
+                <div class="form-group">
+                    <label for="foto">Foto URL</label>
+                    <input id="foto" class="form-control" type="url" name="thumbnail">
+                </div>
+
+                <!-- Botón de envío -->
+                <button class="btn btn-success mt-3">Enviar</button>
+            </form>
+            <br>
+            <div id="productos"></div>
+        </div>
+
+        <div class="jumbotron">
+            <h1>Centro de Mensajes (Compresión: <span id="compresion-info"></span>%)</h1>
+            <br>
+
+            <input type="text" id="username" class="form-control w-50 my-2 mr-2" placeholder="Ingresá tu email">
+            <input type="text" id="firstname" class="form-control w-50 my-2 mr-2" placeholder="Ingresá tu nombre">
+            <input type="text" id="lastname" class="form-control w-50 my-2 mr-2" placeholder="Ingresá tu apellido">
+            <input type="text" id="age" class="form-control w-50 my-2 mr-2" placeholder="Ingresá tu edad">
+            <input type="text" id="alias" class="form-control w-50 my-2 mr-2" placeholder="Ingresá tu alias">
+            <input type="text" id="avatar" class="form-control w-50 my-2 mr-2" placeholder="Ingresá tu avatar (url)">
+            <hr>
+
+            <hr>
+
+            <div id="mensajes"></div>
+
+            <form id="formPublicarMensaje" class="form-inline" autocomplete="off">
+                <div class="form-group">
+                    <input disabled id="inputMensaje" type="text" class="form-control my-2 mr-2"
+                        placeholder="Ingresá un mensaje...">
+                    <button disabled id="btnEnviar" type="submit" class="btn btn-primary my-2">Enviar!</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+
+</body>
+
+</html>

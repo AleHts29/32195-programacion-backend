@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+    <title>Logout</title>
+</head>
+
+<body>
+    <%- include('../partials/info.ejs', { specs })%>
+    <div class="jumbotron">
+        <h1 class="alert alert-primary">
+            Hasta luego, <%=nombre%>!
+        </h1>
+    </div>
+    <script>
+        setTimeout(() => {
+            location.href = '/'
+        }, 2000)
+    </script>
+</body>
+
+</html>
