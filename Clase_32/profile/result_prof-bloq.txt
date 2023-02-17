@@ -1,0 +1,107 @@
+Statistical profiling result from isolate-bloq-v8.log, (16874 ticks, 4 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+     14    0.1%          /usr/lib/system/libsystem_kernel.dylib
+      9    0.1%          /usr/lib/system/libsystem_c.dylib
+      5    0.0%          /usr/lib/system/libsystem_pthread.dylib
+      5    0.0%          /usr/lib/system/libsystem_malloc.dylib
+      2    0.0%          /usr/lib/libc++.1.dylib
+      1    0.0%          /usr/lib/system/libxpc.dylib
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      2    0.0%    0.0%  Function: ^pbkdf2Sync node:internal/crypto/pbkdf2:68:20
+      2    0.0%    0.0%  Function: ^onwrite node:internal/streams/writable:425:17
+      2    0.0%    0.0%  Function: ^next /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/index.js:177:16
+      2    0.0%    0.0%  Function: ^_flushOutput node:_http_outgoing:951:63
+      1    0.0%    0.0%  RegExp: ^text\/|^application\/(javascript|json)
+      1    0.0%    0.0%  RegExp: ^\/newUser\/?$
+      1    0.0%    0.0%  RegExp: ^[!#$%&'*+.^_`|~0-9A-Za-z-]+$
+      1    0.0%    0.0%  Function: ^send /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/response.js:111:25
+      1    0.0%    0.0%  Function: ^res.get /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/response.js:811:19
+      1    0.0%    0.0%  Function: ^readStart node:_http_incoming:40:19
+      1    0.0%    0.0%  Function: ^process_params /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/index.js:338:47
+      1    0.0%    0.0%  Function: ^parserOnHeadersComplete node:_http_common:77:33
+      1    0.0%    0.0%  Function: ^parseExtendedQueryString /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/utils.js:289:34
+      1    0.0%    0.0%  Function: ^parse /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/content-type/index.js:106:16
+      1    0.0%    0.0%  Function: ^normalizeParseOptions /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/qs/lib/parse.js:204:59
+      1    0.0%    0.0%  Function: ^matchHeader node:_http_outgoing:524:21
+      1    0.0%    0.0%  Function: ^hasHooks node:internal/async_hooks:471:18
+      1    0.0%    0.0%  Function: ^getDefaultTriggerAsyncId node:internal/async_hooks:433:34
+      1    0.0%    0.0%  Function: ^get node:_http_incoming:108:16
+      1    0.0%    0.0%  Function: ^generateETag /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/utils.js:273:32
+      1    0.0%    0.0%  Function: ^fresh /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/parseurl/index.js:153:16
+      1    0.0%    0.0%  Function: ^_writeRaw node:_http_outgoing:344:19
+      1    0.0%    0.0%  Function: ^_addHeaderLine node:_http_incoming:337:24
+      1    0.0%    0.0%  Function: ^ServerResponse node:_http_server:178:24
+
+ [C++]:
+   ticks  total  nonlib   name
+  16727   99.1%   99.3%  t node::fs::InternalModuleReadJSON(v8::FunctionCallbackInfo<v8::Value> const&)
+     28    0.2%    0.2%  t __posix_spawn_file_actions_grow
+     15    0.1%    0.1%  T node::contextify::ContextifyContext::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+     12    0.1%    0.1%  T _semaphore_destroy
+      6    0.0%    0.0%  t std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long)
+      2    0.0%    0.0%  t std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> > std::__1::__pad_and_output<char, std::__1::char_traits<char> >(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> >, char const*, char const*, char const*, std::__1::ios_base&, char)
+      2    0.0%    0.0%  t node::fs::Open(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.0%    0.0%  T _mig_dealloc_reply_port
+      2    0.0%    0.0%  T _mach_port_allocate
+      2    0.0%    0.0%  T _mach_get_times
+      1    0.0%    0.0%  t ___pfz_setup
+      1    0.0%    0.0%  T node::fs::Close(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  T node::binding::GetInternalBinding(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  T _os_unfair_recursive_lock_unlock
+      1    0.0%    0.0%  T _mach_vm_map
+      1    0.0%    0.0%  T _mach_port_type
+      1    0.0%    0.0%  T __simple_getenv
+      1    0.0%    0.0%  T __os_alloc_once
+
+ [Summary]:
+   ticks  total  nonlib   name
+     28    0.2%    0.2%  JavaScript
+  16806   99.6%   99.8%  C++
+     17    0.1%    0.1%  GC
+     36    0.2%          Shared libraries
+      4    0.0%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+  16712   99.8%   99.0%  t node::fs::InternalModuleReadJSON(v8::FunctionCallbackInfo<v8::Value> const&)
+     15    0.1%    0.1%  T node::contextify::ContextifyContext::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+      8    0.0%    0.0%  T _semaphore_destroy
+      5    0.0%    0.0%  t std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long)
+      2    0.0%    0.0%  t std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> > std::__1::__pad_and_output<char, std::__1::char_traits<char> >(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> >, char const*, char const*, char const*, std::__1::ios_base&, char)
+      2    0.0%    0.0%  t node::fs::Open(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.0%    0.0%  T _mig_dealloc_reply_port
+      1    0.0%    0.0%  t ___pfz_setup
+      1    0.0%    0.0%  T node::fs::Close(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  T node::binding::GetInternalBinding(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  T __simple_getenv
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+  16727   99.1%  t node::fs::InternalModuleReadJSON(v8::FunctionCallbackInfo<v8::Value> const&)
+  16184   96.8%    Function: ^pbkdf2Sync node:internal/crypto/pbkdf2:68:20
+  16117   99.6%      Function: ^<anonymous> /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/index.js:45:23
+  16117  100.0%        Function: ^handle /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/layer.js:86:49
+  15985   99.2%          Function: ^next /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/route.js:116:16
+  15985  100.0%            Function: ^dispatch /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/route.js:98:45
+    312    1.9%    LazyCompile: ~pbkdf2Sync node:internal/crypto/pbkdf2:68:20
+    266   85.3%      LazyCompile: ~<anonymous> /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/index.js:45:23
+    233   87.6%        Function: ^handle /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/layer.js:86:49
+    233  100.0%          LazyCompile: ~next /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/route.js:116:16
+    201   86.3%            LazyCompile: ~dispatch /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/route.js:98:45
+     32   13.7%            Function: ^dispatch /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/route.js:98:45
+     33   12.4%        LazyCompile: ~handle /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/layer.js:86:49
+     33  100.0%          LazyCompile: ~next /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/route.js:116:16
+     33  100.0%            LazyCompile: ~dispatch /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/route.js:98:45
+     46   14.7%      LazyCompile: ~<anonymous> /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/index.js:17:21
+     46  100.0%        LazyCompile: ~handle /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/layer.js:86:49
+     46  100.0%          LazyCompile: ~next /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/route.js:116:16
+     46  100.0%            LazyCompile: ~dispatch /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/route.js:98:45
+

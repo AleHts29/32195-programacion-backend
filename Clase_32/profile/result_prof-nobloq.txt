@@ -1,0 +1,312 @@
+Statistical profiling result from isolate-nobloq-v8.log, (1039 ticks, 4 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+     16    1.5%          /usr/lib/system/libsystem_pthread.dylib
+      9    0.9%          /usr/lib/system/libsystem_c.dylib
+      7    0.7%          /usr/lib/system/libsystem_malloc.dylib
+      5    0.5%          /usr/lib/libc++.1.dylib
+      4    0.4%          /usr/lib/system/libsystem_kernel.dylib
+      1    0.1%          /usr/lib/libc++abi.dylib
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      2    0.2%    0.2%  LazyCompile: *normalizeString node:path:66:25
+      1    0.1%    0.1%  RegExp: [^\t\x20-\x7e\x80-\xff]
+      1    0.1%    0.1%  RegExp: ; *([!#$%&'*+.^_`|~0-9A-Za-z-]+) *= *("(?:[\u000b\u0020\u0021\u0023-\u005b\u005d-\u007e\u0080-\u00ff]|\\[\u000b\u0020-\u00ff])*"|[!#$%&'*+.^_`|~0-9A-Za-z-]+) *
+      1    0.1%    0.1%  Function: ^resume node:internal/streams/readable:977:16
+      1    0.1%    0.1%  Function: ^parserOnHeadersComplete node:_http_common:77:33
+      1    0.1%    0.1%  Function: ^noop node:internal/util/debuglog:47:14
+      1    0.1%    0.1%  Function: ^nextTick node:internal/process/task_queues:104:18
+      1    0.1%    0.1%  Function: ^module.exports /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/qs/lib/parse.js:239:27
+      1    0.1%    0.1%  Function: ^get node:internal/streams/readable:1202:18
+      1    0.1%    0.1%  Function: ^get node:_http_incoming:108:16
+      1    0.1%    0.1%  Function: ^fromString node:buffer:432:20
+      1    0.1%    0.1%  Function: ^_flushOutput node:_http_outgoing:951:63
+      1    0.1%    0.1%  Function: ^_addHeaderLines node:_http_incoming:199:25
+      1    0.1%    0.1%  Function: ^OutgoingMessage node:_http_outgoing:97:25
+
+ [C++]:
+   ticks  total  nonlib   name
+    654   62.9%   65.6%  t __posix_spawn_file_actions_grow
+    260   25.0%   26.1%  t node::fs::InternalModuleReadJSON(v8::FunctionCallbackInfo<v8::Value> const&)
+     21    2.0%    2.1%  T node::contextify::ContextifyContext::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+      9    0.9%    0.9%  T _semaphore_destroy
+      8    0.8%    0.8%  t void node::Buffer::(anonymous namespace)::StringSlice<(node::encoding)1>(v8::FunctionCallbackInfo<v8::Value> const&)
+      6    0.6%    0.6%  T _mach_vm_map
+      5    0.5%    0.5%  T _mach_port_type
+      4    0.4%    0.4%  t std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long)
+      3    0.3%    0.3%  T _mach_port_allocate
+      2    0.2%    0.2%  t ___pfz_setup
+      2    0.2%    0.2%  T _mach_get_times
+      1    0.1%    0.1%  t std::__1::__hash_table<unsigned long, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<unsigned long> >::remove(std::__1::__hash_const_iterator<std::__1::__hash_node<unsigned long, void*>*>)
+      1    0.1%    0.1%  t __pthread_mutex_check_init_slow
+      1    0.1%    0.1%  t __os_once_gate_broadcast
+      1    0.1%    0.1%  T node::loader::ModuleWrap::Evaluate(v8::FunctionCallbackInfo<v8::Value> const&)
+
+ [Summary]:
+   ticks  total  nonlib   name
+     15    1.4%    1.5%  JavaScript
+    978   94.1%   98.1%  C++
+     21    2.0%    2.1%  GC
+     42    4.0%          Shared libraries
+      4    0.4%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+    236   84.9%   22.7%  t node::fs::InternalModuleReadJSON(v8::FunctionCallbackInfo<v8::Value> const&)
+     21    7.6%    2.0%  T node::contextify::ContextifyContext::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+      8    2.9%    0.8%  t void node::Buffer::(anonymous namespace)::StringSlice<(node::encoding)1>(v8::FunctionCallbackInfo<v8::Value> const&)
+      5    1.8%    0.5%  T _semaphore_destroy
+      4    1.4%    0.4%  t std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long)
+      1    0.4%    0.1%  t __os_once_gate_broadcast
+      1    0.4%    0.1%  t ___pfz_setup
+      1    0.4%    0.1%  T node::loader::ModuleWrap::Evaluate(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.4%    0.1%  T _mach_get_times
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+    654   62.9%  t __posix_spawn_file_actions_grow
+
+    260   25.0%  t node::fs::InternalModuleReadJSON(v8::FunctionCallbackInfo<v8::Value> const&)
+     54   20.8%    LazyCompile: ~pbkdf2Sync node:internal/crypto/pbkdf2:68:20
+     54  100.0%      LazyCompile: ~<anonymous> /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/index.js:17:21
+     54  100.0%        LazyCompile: ~handle /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/layer.js:86:49
+     54  100.0%          LazyCompile: ~next /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/route.js:116:16
+     54  100.0%            LazyCompile: ~dispatch /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/route.js:98:45
+     20    7.7%    Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     19   95.0%      Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      5   26.3%        Function: ~<anonymous> node:crypto:1:1
+      5  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      5  100.0%            Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      2   10.5%        Function: ~<anonymous> node:internal/cluster/primary:1:1
+      2  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      2   10.5%        Function: ~<anonymous> node:http:1:1
+      2  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2  100.0%            LazyCompile: ~compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      2   10.5%        Function: ~<anonymous> node:child_process:1:1
+      2  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    5.3%        LazyCompile: ~lazyRequire node:internal/crypto/util:67:21
+      1  100.0%          LazyCompile: ~get node:crypto:287:8
+      1  100.0%            t node::fs::InternalModuleReadJSON(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    5.3%        LazyCompile: ~initializeCJSLoader node:internal/bootstrap/pre_execution:477:29
+      1  100.0%          LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:28:36
+      1  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    5.3%        Function: ~<anonymous> node:internal/crypto/pbkdf2:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    5.3%        Function: ~<anonymous> node:internal/crypto/hkdf:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    5.3%        Function: ~<anonymous> node:internal/child_process:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    5.3%        Function: ~<anonymous> node:_http_server:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    5.3%        Function: ~<anonymous> node:_http_common:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    5.3%        Function: ~<anonymous> node:_http_client:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    5.0%      Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      1  100.0%        Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      1  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+     14    5.4%    LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     14  100.0%      LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      2   14.3%        LazyCompile: ~initializeCJSLoader node:internal/bootstrap/pre_execution:477:29
+      2  100.0%          LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:28:36
+      2  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      2   14.3%        Function: ~<anonymous> node:internal/process/esm_loader:1:1
+      2  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2  100.0%            LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      2   14.3%        Function: ~<anonymous> node:internal/modules/esm/get_source:1:1
+      2  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2  100.0%            LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      2   14.3%        Function: ~<anonymous> node:internal/modules/esm/fetch_module:1:1
+      2  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2  100.0%            LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    7.1%        LazyCompile: ~get BlockList node:net:1826:16
+      1  100.0%          Function: ~<anonymous> node:internal/modules/esm/fetch_module:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    7.1%        Function: ~<anonymous> node:internal/source_map/source_map_cache:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    7.1%        Function: ~<anonymous> node:internal/modules/esm/resolve:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    7.1%        Function: ~<anonymous> node:internal/modules/esm/module_map:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    7.1%        Function: ~<anonymous> node:internal/modules/esm/loader:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    7.1%        Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      9    3.5%    t node::fs::InternalModuleReadJSON(v8::FunctionCallbackInfo<v8::Value> const&)
+      2   22.2%      Function: ^_addHeaderLine node:_http_incoming:337:24
+      2  100.0%        Function: ^get node:_http_incoming:108:16
+      1   50.0%          LazyCompile: ~parserOnIncoming node:_http_server:857:26
+      1  100.0%            LazyCompile: ~parserOnHeadersComplete node:_http_common:77:33
+      1   50.0%          Function: ^parserOnIncoming node:_http_server:857:26
+      1  100.0%            Function: ^parserOnHeadersComplete node:_http_common:77:33
+      1   11.1%      LazyCompile: ~resolvePackageTargetString node:internal/modules/esm/resolve:507:36
+      1  100.0%        LazyCompile: ~resolvePackageTarget node:internal/modules/esm/resolve:572:30
+      1  100.0%          LazyCompile: ~resolvePackageTarget node:internal/modules/esm/resolve:572:30
+      1  100.0%            LazyCompile: ~resolvePackageTarget node:internal/modules/esm/resolve:572:30
+      1   11.1%      Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      1  100.0%        Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      1  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1   11.1%      Function: ^match /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/layer.js:110:39
+      1  100.0%        Function: ^matchLayer /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/index.js:583:20
+      1  100.0%          Function: ^next /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/index.js:177:16
+      1  100.0%            Function: ^expressInit /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/middleware/init.js:29:30
+      1   11.1%      Function: ^insert node:internal/timers:350:16
+      1  100.0%        Function: ^setUnrefTimeout node:internal/timers:372:25
+      1  100.0%          Function: ^setStreamTimeout node:internal/stream_base_commons:237:26
+      1  100.0%            Function: ^resOnFinish node:_http_server:793:21
+      1   11.1%      Function: ^header /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/response.js:777:29
+      1  100.0%        Function: ^send /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/response.js:111:25
+      1  100.0%          Function: ^sendStatus /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/response.js:369:37
+      1  100.0%            Function: ^<anonymous> /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/index.js:85:57
+      1   11.1%      Function: ^expressInit /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/middleware/init.js:29:30
+      1  100.0%        Function: ^handle /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%          Function: ^trim_prefix /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/index.js:293:23
+      1  100.0%            LazyCompile: *next /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/index.js:177:16
+      1   11.1%      Function: ^checkInvalidHeaderChar node:_http_common:232:32
+      1  100.0%        Function: ^<anonymous> node:_http_outgoing:564:45
+      1  100.0%          Function: ^setHeader node:_http_outgoing:574:57
+      1  100.0%            Function: ^header /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/response.js:777:29
+      6    2.3%    Function: ^send /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/response.js:111:25
+      6  100.0%      Function: ^sendStatus /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/response.js:369:37
+      6  100.0%        Function: ^<anonymous> /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/index.js:85:57
+      6  100.0%          Function: ^job.ondone node:internal/crypto/pbkdf2:56:16
+      5    1.9%    Function: ^writevGeneric node:internal/stream_base_commons:122:23
+      5  100.0%      Function: ^Socket._writeGeneric node:net:791:42
+      5  100.0%        Function: ^Socket._writev node:net:823:36
+      5  100.0%          Function: ^doWrite node:internal/streams/writable:398:17
+      5  100.0%            Function: ^clearBuffer node:internal/streams/writable:529:21
+      5    1.9%    Function: ^contentType /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/response.js:619:32
+      5  100.0%      Function: ^sendStatus /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/response.js:369:37
+      5  100.0%        Function: ^<anonymous> /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/index.js:85:57
+      5  100.0%          Function: ^job.ondone node:internal/crypto/pbkdf2:56:16
+      3    1.2%    Function: ^sendStatus /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/response.js:369:37
+      3  100.0%      Function: ^<anonymous> /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/index.js:85:57
+      3  100.0%        Function: ^job.ondone node:internal/crypto/pbkdf2:56:16
+      3    1.2%    Function: ^resOnFinish node:_http_server:793:21
+      3  100.0%      Function: ^emit node:events:475:44
+      3  100.0%        Function: ^onFinish node:_http_outgoing:828:18
+      3  100.0%          Function: ^callback node:internal/streams/writable:550:44
+      3  100.0%            Function: ^afterWrite node:internal/streams/writable:487:20
+      3    1.2%    Function: ^nextTick node:internal/process/task_queues:104:18
+      1   33.3%      LazyCompile: ~onwrite node:internal/streams/writable:425:17
+      1  100.0%        LazyCompile: ~afterWriteDispatched node:internal/stream_base_commons:155:30
+      1  100.0%          LazyCompile: ~writevGeneric node:internal/stream_base_commons:122:23
+      1  100.0%            LazyCompile: ~Socket._writeGeneric node:net:791:42
+      1   33.3%      Function: ^resOnFinish node:_http_server:793:21
+      1  100.0%        Function: ^emit node:events:475:44
+      1  100.0%          Function: ^onFinish node:_http_outgoing:828:18
+      1  100.0%            Function: ^callback node:internal/streams/writable:550:44
+      1   33.3%      Function: ^endReadable node:internal/streams/readable:1328:21
+      1  100.0%        Function: ^Readable.read node:internal/streams/readable:394:35
+      1  100.0%          Function: ^flow node:internal/streams/readable:1008:14
+      1  100.0%            Function: ^resume_ node:internal/streams/readable:984:17
+      3    1.2%    Function: ^emit node:events:475:44
+      2   66.7%      Function: ^onFinish node:_http_outgoing:828:18
+      2  100.0%        Function: ^callback node:internal/streams/writable:550:44
+      2  100.0%          Function: ^afterWrite node:internal/streams/writable:487:20
+      2  100.0%            Function: ^afterWriteTick node:internal/streams/writable:482:24
+      1   33.3%      Function: ^_finish node:_http_outgoing:909:53
+      1  100.0%        Function: ^_finish node:_http_server:204:52
+      1  100.0%          LazyCompile: ~end node:_http_outgoing:833:45
+      1  100.0%            LazyCompile: ~send /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/response.js:111:25
+      3    1.2%    Function: ^<anonymous> /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/index.js:85:57
+      3  100.0%      Function: ^job.ondone node:internal/crypto/pbkdf2:56:16
+
+     21    2.0%  T node::contextify::ContextifyContext::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+     20   95.2%    Function: ^compileFunction node:vm:308:25
+     19   95.0%      Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+     17   89.5%        Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+     10   58.8%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+     10  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      7   41.2%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      7  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      2   10.5%        LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1059:37
+      2  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      2  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    5.0%      LazyCompile: ~wrapSafe node:internal/modules/cjs/loader:1017:18
+      1  100.0%        LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    4.8%    LazyCompile: ~compileFunction node:vm:308:25
+      1  100.0%      LazyCompile: ~wrapSafe node:internal/modules/cjs/loader:1017:18
+      1  100.0%        LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            LazyCompile: ~Module.load node:internal/modules/cjs/loader:969:33
+
+     16    1.5%  /usr/lib/system/libsystem_pthread.dylib
+      2   12.5%    LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:28:36
+      2  100.0%      Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    6.3%    LazyCompile: ~value node:internal/console/constructor:321:20
+      1  100.0%      LazyCompile: ~log node:internal/console/constructor:359:6
+      1  100.0%        t node::fs::InternalModuleReadJSON(v8::FunctionCallbackInfo<v8::Value> const&)
+      1  100.0%          LazyCompile: ~<anonymous> /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/index.js:96:18
+      1  100.0%            LazyCompile: ~onceWrapper node:events:636:21
+      1    6.3%    LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%      LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%        LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      1  100.0%          LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:70:31
+      1  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    6.3%    LazyCompile: ~shift node:internal/priority_queue:107:8
+      1  100.0%      LazyCompile: ~listOnTimeout node:internal/timers:507:25
+      1  100.0%        LazyCompile: ~processTimers node:internal/timers:487:25
+      1    6.3%    LazyCompile: ~setupWarningHandler node:internal/bootstrap/pre_execution:142:29
+      1  100.0%      LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:28:36
+      1  100.0%        Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    6.3%    LazyCompile: ~handle /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/index.js:136:31
+      1  100.0%      LazyCompile: ~handle /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/application.js:165:29
+      1  100.0%        LazyCompile: ~app /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/express.js:38:21
+      1  100.0%          LazyCompile: ~emit node:events:475:44
+      1  100.0%            LazyCompile: ~parserOnIncoming node:_http_server:857:26
+      1    6.3%    LazyCompile: ~fastparse /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/parseurl/index.js:95:20
+      1  100.0%      LazyCompile: ~parseurl /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/parseurl/index.js:35:19
+      1  100.0%        LazyCompile: ~getPathname /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/index.js:537:21
+      1  100.0%          LazyCompile: ~next /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/index.js:177:16
+      1  100.0%            LazyCompile: ~handle /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/router/index.js:136:31
+      1    6.3%    LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:41:35
+      1  100.0%      LazyCompile: ~getStderr node:internal/bootstrap/switches/is_main_thread:137:19
+      1  100.0%        Function: ~<anonymous> /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/debug/src/node.js:1:1
+      1  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1    6.3%    LazyCompile: ~cache node:internal/http:26:15
+      1  100.0%      LazyCompile: ~utcDate node:internal/http:21:17
+      1  100.0%        LazyCompile: ~_storeHeader node:_http_outgoing:374:22
+      1  100.0%          LazyCompile: ~writeHead node:_http_server:270:19
+      1  100.0%            LazyCompile: ~_implicitHeader node:_http_server:265:68
+      1    6.3%    LazyCompile: ~ServerResponse node:_http_server:178:24
+      1  100.0%      LazyCompile: ~parserOnIncoming node:_http_server:857:26
+      1  100.0%        LazyCompile: ~parserOnHeadersComplete node:_http_common:77:33
+      1    6.3%    LazyCompile: ~Readable node:internal/streams/readable:181:18
+      1  100.0%      LazyCompile: ~Duplex node:internal/streams/duplex:52:16
+      1  100.0%        LazyCompile: ~Socket node:net:285:16
+      1  100.0%          LazyCompile: ~WriteStream node:tty:85:21
+      1  100.0%            LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:41:35
+      1    6.3%    Function: ~<anonymous> node:internal/fs/promises:1:1
+      1  100.0%      LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%        LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%          Function: ~<anonymous> node:internal/modules/esm/get_source:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    6.3%    Function: ^wrapfunction /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/depd/index.js:413:23
+      1  100.0%      Function: ~<anonymous> /Users/ale-hts/<CODE>/CoderHouse/BackEnd/32195-programacion-backend/Clase_32/profile/node_modules/express/lib/response.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+
