@@ -11,7 +11,7 @@ const authToken = process.env.TWILIO_AUTH_TOKEN
 const client = twilio(accountSid, authToken)
 
 
-// const numbers = ['+5491153267449', '+5492615909801']
+// const numbers = ['+xxxxxxxx', '+xxxxxxxx']
 
 try {
     let messasge = ''
@@ -35,7 +35,7 @@ const options = {
     body: "Hola soy un WSP desde nodeJS",
     mediaUrl: ["https://pbs.twimg.com/media/D4uQCqNW4AA4s0I.jpg"],
     from: "whatsapp:+14155238886",
-    to: "whatsapp:+5491153267449",
+    to: "whatsapp:+xxxxxxxx",
 };
 
 app.post('/twilio-coder', async (req, res) => {
