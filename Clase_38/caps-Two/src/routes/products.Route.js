@@ -1,5 +1,5 @@
 const express = require('express');
-const { getDatosControllers, postDatosControllers } = require('../controllers/products.Controllers.js')
+const { getDatosControllers, postDatosControllers, deleteDatosControllers } = require('../controllers/products.Controllers.js')
 
 const router = express.Router();
 
@@ -10,6 +10,9 @@ router.get('/', getDatosControllers);
 // post
 router.post('/', postDatosControllers);
 
+
+// ejercico
+router.delete('/', deleteDatosControllers);
 
 
 module.exports = router;

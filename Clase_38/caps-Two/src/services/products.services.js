@@ -1,4 +1,4 @@
-const { recuperarDatos, guardarDato } = require("../models/productData.js")
+const { recuperarDatos, guardarDato, deleById } = require("../models/productData.js")
 
 const obtenerDatos = async () => {
     // logica
@@ -13,7 +13,12 @@ const crearDato = async (dato) => {
     return dato;
 }
 
+const deleteServices = async (id) => {
+    return await deleById(id);
+}
+
 module.exports = {
     obtenerDatos,
-    crearDato
+    crearDato,
+    deleById
 }

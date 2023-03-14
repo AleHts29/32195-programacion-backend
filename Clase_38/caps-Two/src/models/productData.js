@@ -42,8 +42,12 @@ const guardarDato = (dato) => {
     return data;
 }
 
+const deleById = (id) => {
+    // desarrollar logica para el0iminar el producto
+}
 
 module.exports = {
     recuperarDatos,
-    guardarDato
+    guardarDato,
+    deleById
 }

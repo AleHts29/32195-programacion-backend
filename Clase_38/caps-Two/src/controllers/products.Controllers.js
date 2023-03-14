@@ -1,4 +1,4 @@
-const { obtenerDatos, crearDato } = require('../services/products.services.js')
+const { obtenerDatos, crearDato, deleteServices } = require('../services/products.services.js')
 
 const getDatosControllers = async (req, res) => {
     // armo lokgica de peticion
@@ -12,7 +12,15 @@ const postDatosControllers = async (req, res) => {
     res.json({ dato })
 }
 
+const deleteDatosControllers = async (req, res) => {
+    let { id } = req.params
+    await deleteServices(id)
+    res.json({ msj: "delete product" })
+}
+
+
 module.exports = {
     getDatosControllers,
-    postDatosControllers
+    postDatosControllers,
+    deleteDatosControllers
 }
