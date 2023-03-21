@@ -1,0 +1,18 @@
+{
+  "type": "module",
+  "name": "dto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "log4js": "^6.5.1",
+    "mongoose": "^6.3.4"
+  }
+}

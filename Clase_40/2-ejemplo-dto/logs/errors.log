@@ -1,0 +1,66 @@
+[2022-05-26T18:35:19.199] [ERROR] prod - CustomError {
+  codigo: 500,
+  descripcion: 'Error al guardar()',
+  detalle: CustomError {
+    codigo: 500,
+    descripcion: 'Error al conectarse a mongodb',
+    detalle: MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017
+        at NativeConnection.Connection.openUri (C:\temp\Clase-40\ejemplos\DTO\node_modules\mongoose\lib\connection.js:807:32)
+        at C:\temp\Clase-40\ejemplos\DTO\node_modules\mongoose\lib\index.js:342:10
+        at C:\temp\Clase-40\ejemplos\DTO\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+        at new Promise (<anonymous>)
+        at promiseOrCallback (C:\temp\Clase-40\ejemplos\DTO\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+        at Mongoose._promiseOrCallback (C:\temp\Clase-40\ejemplos\DTO\node_modules\mongoose\lib\index.js:1181:10)
+        at Mongoose.connect (C:\temp\Clase-40\ejemplos\DTO\node_modules\mongoose\lib\index.js:341:20)
+        at MongoDBClient.connect (file:///C:/temp/Clase-40/ejemplos/DTO/src/Classes/MongoDBClient.class.js:17:31)
+        at ProductosDAO.guardar (file:///C:/temp/Clase-40/ejemplos/DTO/src/services/ProductosDAO.js:32:29)
+        at Object.guardar (file:///C:/temp/Clase-40/ejemplos/DTO/src/controllers/Productos.controller.js:10:29) {
+      reason: [TopologyDescription],
+      code: undefined
+    }
+  }
+}
+[2022-05-26T18:36:23.535] [ERROR] prod - CustomError {
+  codigo: 500,
+  descripcion: 'Error al guardar()',
+  detalle: CustomError {
+    codigo: 500,
+    descripcion: 'Error al conectarse a mongodb',
+    detalle: MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017
+        at NativeConnection.Connection.openUri (C:\temp\Clase-40\ejemplos\DTO\node_modules\mongoose\lib\connection.js:807:32)
+        at C:\temp\Clase-40\ejemplos\DTO\node_modules\mongoose\lib\index.js:342:10
+        at C:\temp\Clase-40\ejemplos\DTO\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+        at new Promise (<anonymous>)
+        at promiseOrCallback (C:\temp\Clase-40\ejemplos\DTO\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+        at Mongoose._promiseOrCallback (C:\temp\Clase-40\ejemplos\DTO\node_modules\mongoose\lib\index.js:1181:10)
+        at Mongoose.connect (C:\temp\Clase-40\ejemplos\DTO\node_modules\mongoose\lib\index.js:341:20)
+        at MongoDBClient.connect (file:///C:/temp/Clase-40/ejemplos/DTO/src/Classes/MongoDBClient.class.js:17:31)
+        at ProductosDAO.guardar (file:///C:/temp/Clase-40/ejemplos/DTO/src/services/ProductosDAO.js:32:29)
+        at Object.guardar (file:///C:/temp/Clase-40/ejemplos/DTO/src/controllers/Productos.controller.js:10:29) {
+      reason: [TopologyDescription],
+      code: undefined
+    }
+  }
+}
+[2022-05-26T18:37:24.927] [ERROR] prod - CustomError {
+  codigo: 500,
+  descripcion: 'Error al guardar()',
+  detalle: CustomError {
+    codigo: 500,
+    descripcion: 'Error al conectarse a mongodb',
+    detalle: MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017
+        at NativeConnection.Connection.openUri (C:\temp\Clase-40\ejemplos\DTO\node_modules\mongoose\lib\connection.js:807:32)
+        at C:\temp\Clase-40\ejemplos\DTO\node_modules\mongoose\lib\index.js:342:10
+        at C:\temp\Clase-40\ejemplos\DTO\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+        at new Promise (<anonymous>)
+        at promiseOrCallback (C:\temp\Clase-40\ejemplos\DTO\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+        at Mongoose._promiseOrCallback (C:\temp\Clase-40\ejemplos\DTO\node_modules\mongoose\lib\index.js:1181:10)
+        at Mongoose.connect (C:\temp\Clase-40\ejemplos\DTO\node_modules\mongoose\lib\index.js:341:20)
+        at MongoDBClient.connect (file:///C:/temp/Clase-40/ejemplos/DTO/src/Classes/MongoDBClient.class.js:17:31)
+        at ProductosDAO.guardar (file:///C:/temp/Clase-40/ejemplos/DTO/src/services/ProductosDAO.js:32:29)
+        at Object.guardar (file:///C:/temp/Clase-40/ejemplos/DTO/src/controllers/Productos.controller.js:10:29) {
+      reason: [TopologyDescription],
+      code: undefined
+    }
+  }
+}
