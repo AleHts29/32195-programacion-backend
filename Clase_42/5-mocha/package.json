@@ -1,0 +1,18 @@
+{
+  "type": "module",
+  "name": "4-mocha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Todos.class.js",
+  "scripts": {
+    "test:manual": "node test/todos-manual.test.js",
+    "ejemplo": "mocha test/ejemplos/ejemplo-mocha.test.js",
+    "test": "mocha test/todos-mocha.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  }
+}
