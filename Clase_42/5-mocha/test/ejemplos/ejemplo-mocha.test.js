@@ -1,7 +1,7 @@
-// import { strict as assert } from 'assert';
+import { strict as assert } from 'assert';
 
 // para valores no strictos
-import assert  from 'assert';
+// import assert  from 'assert';
 
 
 describe("Caso de uso 1", ()=>{

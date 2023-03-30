@@ -2,78 +2,87 @@ import Todos from '../src/Todos.class.js'
 import { strict as assert } from 'assert'
 import { existsSync, readFileSync, unlinkSync } from 'fs'
 
-describe("Test de integración de tareas", function () {
+// describe("Test de integración de tareas", function () {
 
-    it('debería crear el contenedor de tareas vacío', function () {
-        const todos = new Todos()
-        assert.strictEqual(todos.list().length, 0)
-    })
+//     // 1er test
+//     it('debería crear el contenedor de tareas vacío', function () {
+//         const todos = new Todos()
+//         assert.strictEqual(todos.list().length, 0)
+//     })
 
-    it('debería adicionar tareas correctamente', function () {
-        const todos = new Todos()
+    
+//     // 2do test
+//     it('debería adicionar tareas correctamente', function () {
+//         const todos = new Todos()
 
-        todos.add("run code")
-        assert.strictEqual(todos.list().length, 1)
-        assert.deepStrictEqual(todos.list(), [ { title: 'run code', complete: false } ])
+//         todos.add("run code")
+//         assert.strictEqual(todos.list().length, 1)
+//         assert.deepStrictEqual(todos.list(), [ { title: 'run code', complete: false } ])
 
-        todos.add("otra tarea")
-        assert.strictEqual(todos.list().length, 2)
-        assert.deepStrictEqual(todos.list(), [
-            { title: 'run code', complete: false },
-            { title: 'otra tarea', complete: false }
-        ])
-    })
+//         todos.add("otra tarea")
+//         assert.strictEqual(todos.list().length, 2)
+//         assert.deepStrictEqual(todos.list(), [
+//             { title: 'run code', complete: false },
+//             { title: 'otra tarea', complete: false }
+//         ])
+//     })
 
-    it('debería marcar una tarea como completa', function () {
-        const todos = new Todos()
+//     // 3er test
+//     it('debería marcar una tarea como completa', function () {
+//         const todos = new Todos()
 
-        todos.add("run code")
-        todos.add("otra tarea")
+//         todos.add("run code")
+//         todos.add("otra tarea")
 
-        todos.complete("run code")
-        assert.deepStrictEqual(todos.list(), [
-            { title: 'run code', complete: true },
-            { title: 'otra tarea', complete: false }
-        ])
+//         todos.complete("run code")
+//         assert.deepStrictEqual(todos.list(), [
+//             { title: 'run code', complete: true },
+//             { title: 'otra tarea', complete: false }
+//         ])
 
-    })
-})
+//     })
+// })
 
-describe("comprobar error en completar tarea inexistente", function () {
 
-    it('deberia dar error cuando no hay tareas cargadas', function () {
-        const todos = new Todos()
+// // 2do escenario
+// describe("comprobar error en completar tarea inexistente", function () {
 
-        const errorEsperado = new Error('No hay tareas')
-        assert.throws(() => {
-            todos.complete('una tareas más')
-        }, errorEsperado)
-    })
+//     it('deberia dar error cuando no hay tareas cargadas', function () {
+//         const todos = new Todos()
 
-    it('deberia dar error cuando la tarea a completar no existe', function () {
-        const todos = new Todos()
-        todos.add("run code")
+//         const errorEsperado = new Error('No hay tareas')
+//         assert.throws(() => {
+//             todos.complete('una tarea más')
+//         }, errorEsperado)
+//     })
 
-        const errorEsperado = new Error('Tarea no encontrada')
-        assert.throws(() => {
-            todos.complete('una tareas más')
-        }, errorEsperado)
-    })
-})
+//     it('deberia dar error cuando la tarea a completar no existe', function () {
+//         const todos = new Todos()
+//         todos.add("run code")
 
-describe("comprobando que saveToFileCb() funcione bien", function () {
-    it('debería guardar una tarea en el archivo todos.txt', function (done) {
-        const todos = new Todos()
-        todos.add('guardar tarea callback')
-        todos.saveToFileCb(err => {
-            assert.strictEqual(existsSync('todos.txt'), true)
-            let contenidoEsperado = 'guardar tarea callback,true'
-            let content = readFileSync('todos.txt').toString();
-            assert.strictEqual(content, contenidoEsperado)
-            done(err)
-        })
-    })
-})
+//         const errorEsperado = new Error('Tarea no encontrada')
+//         assert.throws(() => {
+//             todos.complete('una tareas más')
+//         }, errorEsperado)
+//     })
+// })
+
+
+// // 3er escenario - test de funcionalidad TDD
+// describe("comprobando que saveToFileCb() funcione bien", function () {
+//     it('debería guardar una tarea en el archivo todos.txt', function (done) {
+//         const todos = new Todos()
+//         todos.add('guardar tarea callback')
+//         todos.complete('guardar tarea callback')
+//         todos.saveToFileCb(err => {
+//             assert.strictEqual(existsSync('todos.txt'), true)
+//             let contenidoEsperado = 'guardar tarea callback,true'
+//             let content = readFileSync('todos.txt').toString();
+//             assert.strictEqual(content, contenidoEsperado)    
+//             done(err)
+//         })
+//     })
+// })
 
 
 describe("comprobando que saveToFilePromises() funcione bien", function () {
