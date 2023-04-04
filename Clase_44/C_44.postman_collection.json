@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "3d006ee6-af33-4651-8746-a9e27a9c267a",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21132885"
+	},
+	"item": [
+		{
+			"name": "C_44 Copy",
+			"item": [
+				{
+					"name": "New Request Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Dolar se mantiene estable!!\",\n    \"cuerpo\": \"El dolar blue baja radicalmente\",\n    \"autor\": \"La Nacion\",\n    \"imagen\": \"https://doblar.argentina.jpg\",\n    \"email\": \"lanacion.com\",\n    \"vista\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/noticias",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"noticias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/noticias/641c698d79c5f93e71c2e15d",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"noticias",
+								"641c698d79c5f93e71c2e15d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "01-ejemplo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query {\n    consultaPersonajes{\n        nombre\n    }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "01 - con raw JSON",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"operationName\": \"ejemplo_01\",\n    \"query\": \"query ejemplo_01 {consultaPersonajes {nombre}} query ejemplo_02 { consultaPersonajes { nombre, categoria{ rango, descripcion }}}\",\n    \"variables\": {}\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "01 - ejemplo_02 data http client",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"operationName\": \"ejemplo_01\",\n    \"query\": \"query ejemplo_01 {consultaPersonaje(id: \\\"1\\\") {nombre}} query ejemplo_02 { consultaPersonajes { nombre, categoria{ rango, descripcion }}}\",\n    \"variables\": {}\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02 - ejemplo - POST & GET",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query {\n        getPersona(id: \"80e9dc2d2a038e4feb3b\") {\n            nombre\n            edad\n        }\n    }\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8383/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8383",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02 - ejemplo - UPDATE",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "02 - ejemplo - GET",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"operationName\": \"ejemplo_01\",\n    \"query\": \"query ejemplo_01 {getPersonas{id, nombre, edad}}\",\n    \"variables\": {}\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8383/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8383",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

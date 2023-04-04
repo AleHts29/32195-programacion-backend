@@ -1,0 +1,15 @@
+[2022-12-14T18:24:28.055] [INFO] prod - {
+  server: { PORT: '4444', NODE_ENV: 'production', PERS: 'MONGODB' },
+  fileSystem: {
+    path: '/Users/kevjo_oe/Documents/CoderHouse/programacion_backend32085/Clases/clase-41/1-restful-api/DB'
+  },
+  mongodb: {
+    host: 'mongodb://localhost:27017/clase41',
+    options: {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      serverSelectionTimeoutMS: 5000
+    }
+  }
+}
+[2022-12-14T18:24:28.059] [INFO] prod - Servidor [production] en puerto 4444

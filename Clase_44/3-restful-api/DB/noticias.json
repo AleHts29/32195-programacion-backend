@@ -1,0 +1,19 @@
+[
+  {
+    "id": "123123ik1j23h1kl2j",
+    "titulo": "Finalistas Copa del Mundo",
+    "cuerpo": "Se ha determinado ARG vs FRA",
+    "autor": "CNN sports",
+    "imagen": "",
+    "email": "aaaa@email.com",
+    "vista": false
+  },
+  {
+    "titulo": "Dolar se mantiene estable!!",
+    "cuerpo": "El dolar blue baja radicalmente",
+    "autor": "La Nacion",
+    "imagen": "https://doblar.argentina.jpg",
+    "email": "lanacion.com",
+    "vista": false
+  }
+]
