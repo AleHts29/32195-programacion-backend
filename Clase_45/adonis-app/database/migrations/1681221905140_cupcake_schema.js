@@ -13,7 +13,6 @@ class CupcakeSchema extends Schema {
       table.timestamps()
     })
   }
-
   down () {
     this.drop('cupcakes')
   }
