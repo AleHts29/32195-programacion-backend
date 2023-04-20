@@ -1,3 +1,9 @@
 {
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "deno.enable": true,
+    "deno.suggest.imports.hosts": {
+        "https://deno.land": true,
+        "https://x.nest.land": true,
+        "https://crux.land": true
+    }
 }
